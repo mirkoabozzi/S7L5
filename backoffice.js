@@ -30,7 +30,7 @@ const submitProduct = (event) => {
       if (respond.ok) {
         return respond.json();
       } else {
-        throw new Error("Caricamento prodotto fallito");
+        throw new Error("Add failed");
       }
     })
     .then((product) => {
@@ -43,7 +43,10 @@ const submitProduct = (event) => {
         event.target.reset();
       }
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      console.log(error);
+      alert("You can't use the same product name");
+    });
 };
 
 window.addEventListener("DOMContentLoaded", () => {
