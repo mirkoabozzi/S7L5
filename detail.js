@@ -85,7 +85,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const price = document.createElement("div");
       price.classList.add("fs-5", "mb-5");
-      price.innerText = product.price + "€";
+      price.innerText = product.price + " " + "€";
 
       const description = document.createElement("p");
       description.classList.add("card-text");

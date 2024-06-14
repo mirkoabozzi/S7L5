@@ -63,7 +63,7 @@ const fetchProduct = () => {
 
         const price = document.createElement("h5");
         price.classList.add("card-title");
-        price.innerText = product.price + "€";
+        price.innerText = product.price + " " + "€";
 
         const btn = document.createElement("button");
         btn.classList.add("btn", "btn-primary", "mx-auto", "px-4");
