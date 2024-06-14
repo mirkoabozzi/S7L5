@@ -49,6 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // const price = document.getElementById("price");
   const btn = document.getElementById("button");
   const btnDelete = document.getElementById("btnDelete");
+  const btnReset = document.getElementById("btnReset");
 
   if (crudazonId) {
     btn.innerText = "Modifica prodotto";
@@ -83,6 +84,7 @@ window.addEventListener("DOMContentLoaded", () => {
       .catch((error) => console.log(error));
   } else {
     btn.innerText = "Aggiungi prodotto";
+    btnReset.classList.remove("d-none");
   }
 });
 
