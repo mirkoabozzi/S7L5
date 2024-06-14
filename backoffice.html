@@ -52,28 +52,28 @@
             <h1>Backoffice</h1>
             <form id="form">
               <div class="mb-4">
-                <label for="name" class="form-label">Nome prodotto</label>
-                <input id="name" type="text" class="form-control" id="name" placeholder="Nome prodotto" required />
+                <label for="name" class="form-label">Product name</label>
+                <input id="name" type="text" class="form-control" id="name" placeholder="Product name" required />
               </div>
               <div class="mb-4">
-                <label for="description" class="form-label">Descrizione</label>
-                <input id="description" type="text" class="form-control" id="description" placeholder="Descrizione prodotto" required />
+                <label for="description" class="form-label">Description</label>
+                <textarea id="description" type="text" class="form-control" id="description" placeholder="Description" rows="5" required></textarea>
               </div>
               <div class="mb-4">
                 <label for="brand" class="form-label">Brand</label>
                 <input id="brand" type="text" class="form-control" id="brand" placeholder="Brand" required />
               </div>
               <div class="mb-4">
-                <label for="img" class="form-label">Url immagine</label>
-                <input id="url" type="url" class="form-control" id="img" placeholder="Url" required />
+                <label for="img" class="form-label">URL</label>
+                <input id="url" type="url" class="form-control" id="img" placeholder="URL" required />
               </div>
               <div class="mb-4">
-                <label for="price" class="form-label">Prezzo</label>
-                <input id="price" type="number" class="form-control" id="price" placeholder="Prezzo" min="1" required />
+                <label for="price" class="form-label">Price</label>
+                <input id="price" type="number" class="form-control" id="price" placeholder="Pice" min="1" required />
               </div>
-              <button id="button" type="submit" class="btn btn-primary">Aggiungi prodotto</button>
-              <button id="btnDelete" type="submit" class="btn btn-danger d-none">Elimina prodotto</button>
-              <button id="btnReset" type="reset" class="btn btn-warning d-none" onclick="return confirm('Vuoi svuotare i campi?')">Svuota i campi</button>
+              <button id="button" type="submit" class="btn btn-primary">Add product</button>
+              <button id="btnDelete" type="submit" class="btn btn-danger d-none">Delete product</button>
+              <button id="btnReset" type="reset" class="btn btn-warning d-none" onclick="return confirm('Vuoi svuotare i campi?')">Clear field</button>
             </form>
           </div>
         </div>

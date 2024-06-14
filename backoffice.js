@@ -35,6 +35,13 @@ const submitProduct = (event) => {
     })
     .then((product) => {
       console.log(product);
+
+      if (crudazonId) {
+        alert("Articolo modificato");
+      } else {
+        alert("Articolo caricato");
+        event.target.reset();
+      }
     })
     .catch((error) => console.log(error));
 };
@@ -52,7 +59,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const btnReset = document.getElementById("btnReset");
 
   if (crudazonId) {
-    btn.innerText = "Modifica prodotto";
+    btn.innerText = "Edit product";
     btnDelete.classList.remove("d-none");
     btnDelete.onclick = deleteProduct;
 
@@ -83,7 +90,7 @@ window.addEventListener("DOMContentLoaded", () => {
       })
       .catch((error) => console.log(error));
   } else {
-    btn.innerText = "Aggiungi prodotto";
+    btn.innerText = "Add new product";
     btnReset.classList.remove("d-none");
   }
 });

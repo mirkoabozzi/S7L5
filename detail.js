@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const btn = document.createElement("button");
       btn.classList.add("btn", "btn-primary");
       btn.setAttribute("type", "button");
-      btn.innerText = "Modifica";
+      btn.innerText = "Edit";
 
       btn.addEventListener("click", () => {
         window.location.assign("./backoffice.html?crudazonId=" + product._id);

@@ -1,5 +1,15 @@
 const row = document.getElementById("row");
 
+const pageLoading = (boolean) => {
+  const spinner = document.getElementById("spinner");
+
+  if (boolean) {
+    spinner.classList.remove("d-none");
+  } else {
+    spinner.classList.add("d-none");
+  }
+};
+
 const fetchProduct = () => {
   fetch("https://striveschool-api.herokuapp.com/api/product/", {
     headers: {
@@ -17,11 +27,12 @@ const fetchProduct = () => {
     })
     .then((products) => {
       console.log(products);
+      pageLoading(false);
 
       products.forEach((product) => {
         console.log(product);
         const col = document.createElement("div");
-        col.classList.add("col-md-4");
+        col.classList.add("col-md-4", "d-flex");
         const card = document.createElement("div");
         card.className = "card mb-4 shadow-sm";
 
@@ -34,7 +45,7 @@ const fetchProduct = () => {
         });
 
         const cardBody = document.createElement("div");
-        cardBody.classList.add("card-body");
+        cardBody.classList.add("card-body", "d-flex", "flex-column", "justify-content-end");
 
         const name = document.createElement("h5");
         name.classList.add("card-title");
@@ -53,9 +64,13 @@ const fetchProduct = () => {
         price.innerText = product.price + "€";
 
         const btn = document.createElement("button");
-        btn.classList.add("btn", "btn-primary");
+        btn.classList.add("btn", "btn-primary", "mx-auto", "px-4");
         btn.setAttribute("type", "button");
-        btn.innerText = "Modifica";
+        btn.innerText = "Edit product";
+
+        btn.addEventListener("click", () => {
+          window.location.assign("./backoffice.html?crudazonId=" + product._id);
+        });
 
         const id = document.createElement("p");
         id.classList.add("text-muted");
