@@ -37,7 +37,7 @@ const submitProduct = (event) => {
       console.log(product);
 
       if (crudazonId) {
-        alert("Article modified");
+        alert("Item modified");
       } else {
         alert("Product added");
         event.target.reset();
@@ -49,11 +49,6 @@ const submitProduct = (event) => {
 window.addEventListener("DOMContentLoaded", () => {
   form.onsubmit = submitProduct;
 
-  // const name = document.getElementById("name");
-  // const description = document.getElementById("description");
-  // const brand = document.getElementById("brand");
-  // const urlImg = document.getElementById("url");
-  // const price = document.getElementById("price");
   const btn = document.getElementById("button");
   const btnDelete = document.getElementById("btnDelete");
   const btnReset = document.getElementById("btnReset");
@@ -96,7 +91,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 const deleteProduct = () => {
-  const confirmation = confirm("Vuoi eliminare questo articolo?");
+  const confirmation = confirm("Do you want to delete the item?");
 
   if (confirmation) {
     fetch(URL, {
@@ -112,7 +107,7 @@ const deleteProduct = () => {
         }
       })
       .then((deleteProduct) => {
-        alert("Article deleted " + deleteProduct.name);
+        alert("Item deleted " + deleteProduct.name);
 
         window.location.href = "./home.html";
       })
