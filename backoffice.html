@@ -35,9 +35,6 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="./backoffice.html">Backoffice</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./detail.html">Details</a>
-              </li>
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -74,7 +71,8 @@
                 <label for="price" class="form-label">Prezzo</label>
                 <input id="price" type="number" class="form-control" id="price" placeholder="Prezzo" min="1" required />
               </div>
-              <button type="submit" class="btn btn-primary">Aggiungi prodotto</button>
+              <button id="button" type="submit" class="btn btn-primary">Aggiungi prodotto</button>
+              <button id="btnDelete" type="submit" class="btn btn-danger d-none">Elimina prodotto</button>
             </form>
           </div>
         </div>

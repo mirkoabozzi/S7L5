@@ -29,12 +29,20 @@ const fetchProduct = () => {
         pic.classList.add("bd-placeholder-img", "card-img-top");
         pic.setAttribute("src", product.imageUrl);
 
+        pic.addEventListener("click", () => {
+          window.location.assign("./detail.html?crudazonId=" + product._id);
+        });
+
         const cardBody = document.createElement("div");
         cardBody.classList.add("card-body");
 
         const name = document.createElement("h5");
         name.classList.add("card-title");
         name.innerText = product.name;
+
+        name.addEventListener("click", () => {
+          window.location.assign("./detail.html?crudazonId=" + product._id);
+        });
 
         const description = document.createElement("p");
         description.classList.add("card-text");
