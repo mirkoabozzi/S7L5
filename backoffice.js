@@ -37,9 +37,9 @@ const submitProduct = (event) => {
       console.log(product);
 
       if (crudazonId) {
-        alert("Articolo modificato");
+        alert("Article modified");
       } else {
-        alert("Articolo caricato");
+        alert("Product added");
         event.target.reset();
       }
     })
@@ -112,7 +112,7 @@ const deleteProduct = () => {
         }
       })
       .then((deleteProduct) => {
-        alert("Articolo eliminato " + deleteProduct.name);
+        alert("Article deleted " + deleteProduct.name);
 
         window.location.href = "./home.html";
       })
