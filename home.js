@@ -34,7 +34,7 @@ const fetchProduct = () => {
         const col = document.createElement("div");
         col.classList.add("col-md-4", "d-flex");
         const card = document.createElement("div");
-        card.className = "card mb-4 shadow-sm";
+        card.className = "card mb-4 shadow";
 
         const pic = document.createElement("img");
         pic.classList.add("bd-placeholder-img", "card-img-top");
