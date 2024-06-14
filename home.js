@@ -32,12 +32,13 @@ const fetchProduct = () => {
       products.forEach((product) => {
         console.log(product);
         const col = document.createElement("div");
-        col.classList.add("col-md-4", "d-flex");
+        col.classList.add("col-md-6", "col-lg-4", "d-flex");
         const card = document.createElement("div");
         card.className = "card mb-4 shadow";
 
         const pic = document.createElement("img");
-        pic.classList.add("bd-placeholder-img", "card-img-top");
+        pic.classList.add("bd-placeholder-img", "card-img-top", "p-2");
+        pic.style.cursor = "pointer";
         pic.setAttribute("src", product.imageUrl);
 
         pic.addEventListener("click", () => {
@@ -47,8 +48,9 @@ const fetchProduct = () => {
         const cardBody = document.createElement("div");
         cardBody.classList.add("card-body", "d-flex", "flex-column", "justify-content-end");
 
-        const name = document.createElement("h5");
+        const name = document.createElement("h4");
         name.classList.add("card-title");
+        name.style.cursor = "pointer";
         name.innerText = product.name;
 
         name.addEventListener("click", () => {
