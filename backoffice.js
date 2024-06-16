@@ -37,8 +37,12 @@ const submitProduct = (event) => {
       console.log(product);
 
       if (crudazonId) {
-        alert("Item modified");
-        window.location.reload();
+        // alert("Item modified");
+        // setInterval("window.location.reload()", 3000);
+        const closeBtn = document.getElementById("closeBtn");
+        closeBtn.addEventListener("click", () => {
+          window.location.reload();
+        });
       } else {
         alert("Product added");
         event.target.reset();
@@ -59,6 +63,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (crudazonId) {
     btn.innerText = "Edit product";
+    btn.setAttribute("data-bs-toggle", "modal");
     btnDelete.classList.remove("d-none");
     btnDelete.onclick = deleteProduct;
 

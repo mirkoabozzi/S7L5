@@ -74,9 +74,9 @@
                 <label for="price" class="form-label">Price</label>
                 <input id="price" type="number" class="form-control" id="price" placeholder="Price" min="1" step="any" required />
               </div>
-              <button id="button" type="submit" class="btn btn-primary">Add product</button>
-              <button id="btnDelete" type="button" class="btn btn-danger d-none" data-bs-toggle="modal" data-bs-target="#deleteProduct">Delete product</button>
-              <button id="btnReset" type="reset" class="btn btn-warning d-none" onclick="return confirm('Do you want to empty the fields?')">Clear fields</button>
+              <button id="button" type="submit" class="btn btn-primary my-1" data-bs-target="#editProduct">Add product</button>
+              <button id="btnDelete" type="button" class="btn btn-danger d-none my-1" data-bs-toggle="modal" data-bs-target="#deleteProduct">Delete product</button>
+              <button id="btnReset" type="reset" class="btn btn-warning d-none my1" onclick="return confirm('Do you want to empty the fields?')">Clear fields</button>
             </form>
           </div>
         </div>
@@ -90,7 +90,7 @@
             <h1 class="modal-title fs-5" id="staticBackdropLabel">Do you wont to delete the item?</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body mx-auto">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
               <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
               <path
@@ -101,6 +101,26 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button id="okDelete" type="submit" class="btn btn-danger">Ok delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="editProduct" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Item modified</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+              <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+            </svg>
+          </div>
+          <div class="modal-footer">
+            <button id="closeBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <!-- <button id="okModify" type="submit" class="btn btn-primary">Ok modify</button> -->
           </div>
         </div>
       </div>

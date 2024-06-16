@@ -69,7 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
       col.classList.add("col-md-6");
 
       const pic = document.createElement("img");
-      pic.classList.add("card-img-top", "mb-5", "mb-md-0");
+      pic.classList.add("card-img-top", "mb-5");
       pic.setAttribute("src", product.imageUrl);
 
       const col2 = document.createElement("div");
