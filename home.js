@@ -39,6 +39,8 @@ const fetchProduct = () => {
         const pic = document.createElement("img");
         pic.classList.add("bd-placeholder-img", "card-img-top", "p-2");
         pic.style.cursor = "pointer";
+        pic.style.maxHeight = "300px";
+        pic.style.objectFit = "contain";
         pic.setAttribute("src", product.imageUrl);
 
         pic.addEventListener("click", () => {
@@ -58,7 +60,10 @@ const fetchProduct = () => {
         });
 
         const description = document.createElement("p");
-        description.classList.add("card-text");
+        description.classList.add("card-text", "text-secondary");
+        description.style.height = "100px";
+        description.style.overflow = "hidden";
+        // description.style.textOverflow = "ellipsis";
         description.innerText = product.description;
 
         const price = document.createElement("h5");

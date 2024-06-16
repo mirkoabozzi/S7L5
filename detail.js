@@ -103,9 +103,13 @@ window.addEventListener("DOMContentLoaded", () => {
         window.location.assign("./backoffice.html?crudazonId=" + product._id);
       });
 
+      const brand = document.createElement("p");
+      brand.innerText = product.brand;
+
       divBtn.appendChild(btn);
 
       col2.appendChild(name);
+      col2.appendChild(brand);
       col2.appendChild(price);
       col2.appendChild(description);
       col2.appendChild(id);
