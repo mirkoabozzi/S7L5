@@ -38,6 +38,7 @@ const submitProduct = (event) => {
 
       if (crudazonId) {
         alert("Item modified");
+        window.location.reload();
       } else {
         alert("Product added");
         event.target.reset();
@@ -85,6 +86,12 @@ window.addEventListener("DOMContentLoaded", () => {
         document.getElementById("brand").value = brand;
         document.getElementById("url").value = imageUrl;
         document.getElementById("price").value = price;
+
+        const urlPreview = document.getElementById("urlPreview");
+        urlPreview.setAttribute("src", imageUrl);
+        urlPreview.style.width = "50px";
+        urlPreview.classList.add("mb-2");
+        urlPreview.classList.remove("d-none");
       })
       .catch((error) => console.log(error));
   } else {
