@@ -63,7 +63,8 @@ const fetchProduct = () => {
         description.classList.add("card-text", "text-secondary");
         description.style.height = "100px";
         description.style.overflow = "hidden";
-        // description.style.textOverflow = "ellipsis";
+        description.style.textOverflow = "ellipsis";
+        // description.style.whiteSpace = "nowrap";
         description.innerText = product.description;
 
         const price = document.createElement("h5");

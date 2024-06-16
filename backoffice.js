@@ -101,26 +101,28 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 const deleteProduct = () => {
-  const confirmation = confirm("Do you want to delete the item?");
-
-  if (confirmation) {
-    fetch(URL, {
-      method: "DELETE",
-      headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjZiZjk3OTdjMjM5YzAwMTUyZjRiM2IiLCJpYXQiOjE3MTgzNTIyNDksImV4cCI6MTcxOTU2MTg0OX0.f4gnzNVJVs5xZ9EJ-jZKJDsp7Tycz_uGx67W2xT4030",
-      },
-    })
-      .then((respond) => {
-        if (respond.ok) {
-          return respond.json();
-        }
+  // const confirmation = confirm("Do you want to delete the item?");
+  const okDelete = document.getElementById("okDelete");
+  okDelete.addEventListener("click", (event) => {
+    if (event) {
+      fetch(URL, {
+        method: "DELETE",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjZiZjk3OTdjMjM5YzAwMTUyZjRiM2IiLCJpYXQiOjE3MTgzNTIyNDksImV4cCI6MTcxOTU2MTg0OX0.f4gnzNVJVs5xZ9EJ-jZKJDsp7Tycz_uGx67W2xT4030",
+        },
       })
-      .then((deleteProduct) => {
-        alert("Item deleted " + deleteProduct.name);
+        .then((respond) => {
+          if (respond.ok) {
+            return respond.json();
+          }
+        })
+        .then((deleteProduct) => {
+          // alert("Item deleted " + deleteProduct.name);
 
-        window.location.href = "./home.html";
-      })
-      .catch((error) => console.log(error));
-  }
+          window.location.href = "./home.html";
+        })
+        .catch((error) => console.log(error));
+    }
+  });
 };
